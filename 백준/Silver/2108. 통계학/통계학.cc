@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
 int main() {
   cin.tie(NULL);
   cout.tie(NULL);
@@ -10,16 +9,13 @@ int main() {
   cin >> n;
 
   int sum = 0;
-  
   int freqIdx = 0;
-  int* freqBuff = new int[8001]();
-  int freqBuffCur = 0;
   
   // 인덱스 0~3999는 숫자 -4000 ~ -1에 대응.
   // 인덱스 4000은 숫자 0에 대응
   // 인덱스 4001~8000은 숫자 1~4000에 대응
-  int* a = new int[8001](); 
-  int* b = new int[8001](); // 누적
+  int a[8001] = {0}; 
+  int b[8001] = {0}; // 누적
   
   // 계수 (a[i]의 값은 숫자i의 입력개수)  
   for(int i=0; i<n; i++){
@@ -38,15 +34,9 @@ int main() {
   b[0] = a[0];
   for(int i=1; i<8001; i++){
     b[i] = b[i-1] + a[i];
-  }  
-  // //test
-  // cout << "---teststart \n";
-  // for(int i=0; i<8001; i++){
-  //   if(b[i]!=0)
-  //     cout << "i : " << i << "  b[i] : " << b[i] << "\n";
-  // }
-  // cout << "---test end\n";
-  // //test
+  } 
+
+  // -------------------------
 
   // 1. 산술평균
   float added = sum >= 0 ? 0.5 : -0.5;

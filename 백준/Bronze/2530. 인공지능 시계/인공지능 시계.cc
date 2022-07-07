@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+//#include <bits/stdc++.h>
+#include <stdio.h>
 using namespace std;
 
 int main() {
@@ -6,11 +7,13 @@ int main() {
   //cout.tie(NULL);
 
   int h, m, s;
-  cin >> h >> m >> s;
-
+  //cin >> h >> m >> s;
+  scanf("%d%d%d", &h, &m, &s); 
+    
   int t;
-  cin >> t;
-
+  //cin >> t;
+  scanf("%d", &t);
+    
   int start_sec = h*60*60 + m*60 + s;
   int fin_sec = start_sec + t;
 
@@ -22,5 +25,6 @@ int main() {
   
   s = (fin_sec);
 
-  cout << h%24 << " " << m << " " << s;
+  //cout << h%24 << " " << m << " " << s;
+  printf("%d %d %d", h%24, m, s);
 }
